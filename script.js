@@ -98,3 +98,26 @@ function checkIsProperlyNested(S){
     }
     return (openingBrackets.length === 0) ? 1 : 0; //return 1 only of opening brackets are closed out
 }
+
+function getSymmetryPoint(S){
+    if(S.length === 0 || S.length % 2 === 0) return -1;
+    if(S.length === 1) return 0;
+    const middle = Math.floor(S.length / 2);
+    /*Functional solution, BUT time and space consuming for large strings 
+    (array O(N) for each split, slice, and join)
+    const sArray = S.split('');
+    const leftSub = sArray.slice(0, middle);
+    const rightSub = sArray.slice(middle + 1);
+    leftSub.reverse();
+    return (leftSub.join('') === rightSub.join('')) ? middle : -1;*/
+
+    //Efficient solution: iterate through string UP UNTIL middle
+    let left = 0;
+    let right = S.length - 1;
+    while(left < middle){
+        if(S[left] !== S[right]) return -1;
+        ++left;
+        --right;
+    }
+    return middle;
+}
