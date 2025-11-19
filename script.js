@@ -84,5 +84,17 @@ function getFirstUniqueElem(A){
 }
 
 function checkIsProperlyNested(S){
-    
+    const BRACKETS = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+    const openingBrackets = [];
+    for(let c = 0; c < S.length; c++){
+        if(S[c] in BRACKETS) openingBrackets.push(S[c]);
+        else if(BRACKETS[openingBrackets.pop()] !== S[c]){
+            return 0;
+        }
+    }
+    return (openingBrackets.length === 0) ? 1 : 0;
 }
