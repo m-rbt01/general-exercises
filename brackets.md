@@ -20,18 +20,20 @@ Returns: 0
 # Algorithm
 ```js
 FUNCTION: checkIsProperlyNested(S)
-DECLARE empty stack
+DECLARE object brackets with opening key and closing value pairs
+DECLARE opening brackets array
 FOR each character in s 
-    IF character EQUALS opening brackets THEN
+    IF character IS IN brackets THEN
         PUSH character to stack
     ENDIF
-    ELSE
-        IF top stack EQUALS closing bracket THEN
-            POP stack
-        ENDIF
-        ELSE
-            RETURN 0
-        ENDELSE
+    ELSEIF brackets with POPPED array key DOES NOT EQUAL closing bracket
+        RETURN 0
+    ENDELSEIF
 ENDFOR
-RETURN 1
+IF opening brackets size is 0 THEN
+    RETURN 1
+ENDIF
+ELSE
+    RETURN 0
+ENDELSE
 ```

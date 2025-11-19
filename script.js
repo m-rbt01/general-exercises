@@ -82,3 +82,7 @@ function getFirstUniqueElem(A){
     }
     return -1;
 }
+
+function checkIsProperlyNested(S){
+    
+}
