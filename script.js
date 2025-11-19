@@ -91,10 +91,10 @@ function checkIsProperlyNested(S){
     };
     const openingBrackets = [];
     for(let c = 0; c < S.length; c++){
-        if(S[c] in BRACKETS) openingBrackets.push(S[c]);
-        else if(BRACKETS[openingBrackets.pop()] !== S[c]){
+        if(S[c] in BRACKETS) openingBrackets.push(S[c]); //most inner opening at end of array
+        else if(BRACKETS[openingBrackets.pop()] !== S[c]){ //if popped opening bracket key value doesn't match current closing bracket
             return 0;
         }
     }
-    return (openingBrackets.length === 0) ? 1 : 0;
+    return (openingBrackets.length === 0) ? 1 : 0; //return 1 only of opening brackets are closed out
 }
