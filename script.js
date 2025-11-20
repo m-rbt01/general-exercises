@@ -177,3 +177,17 @@ function getPassingPairs(A){
     }
     return count;
 }
+
+function getMinimalDifference(A){
+    if(A.length === 2) return Math.abs(A[0] - A[1]);
+    let totalSum = A.reduce((sum, num) => sum + num, 0);
+    let leftSum = 0;
+    let minimalDiff = Infinity;
+    for(let i = 0; i < A.length - 1; i++){
+        leftSum += A[i];
+        const rightSum = totalSum - leftSum;
+        const difference = Math.abs(leftSum - rightSum);
+        if(difference < minimalDiff) minimalDiff = difference;
+    }
+    return minimalDiff;
+}
