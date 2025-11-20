@@ -154,3 +154,26 @@ function getMinBlockCount(H){
     });
     return count;
 }
+
+function getPassingPairs(A){
+    const MAX_COUNT = 1000000000;
+    let count = 0;
+    let eastCars = 0;
+    /*Functional Solution BUT only for small arrays,
+    O(N**2) cause of nested loop is slow for large arrays
+    A.forEach((car, index) => {
+        if(!car){
+            for(let c = index + 1; c < A.length; c++){
+                if(A[c]) ++count;
+            }
+        }
+    });*/
+
+    //Efficient solution: Loop only once, track east cars, add to count on west car encounter
+    for(const car of A){
+        if(!car) ++eastCars;
+        else count += eastCars;
+        if(count > MAX_COUNT) return -1;
+    }
+    return count;
+}
