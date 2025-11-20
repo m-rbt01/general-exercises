@@ -141,3 +141,16 @@ function getCompressedLength(A){
     }
     return writePoint; //return new length
 }
+
+function getMinBlockCount(H){
+    const blocks = [];
+    let count = 0;
+    H.forEach((height) => {
+        while(blocks[blocks.length - 1] > height) blocks.pop();
+        if(blocks.length === 0 || blocks[blocks.length - 1] < height){
+            blocks.push(height);
+            ++count;
+        }
+    });
+    return count;
+}
