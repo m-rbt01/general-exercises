@@ -27,5 +27,25 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 
 # Algorithm
 ```js
-
+FUNCTION: getCompressedLength(A)
+SET index to 0
+SET write index to 0
+WHILE index IS LESS THAN a length
+    SET char to a index
+    SET count to 0
+    WHILE index is LESS THAN a length AND a index EQUALS char
+        INCREMENT index
+        INCREMENT count
+    ENDWHILE
+    SET a write to char
+    INCREMENT write 
+    IF count IS GREATER THAN 1 THEN
+        SET str to count to string
+        FOR each digit in str
+            SET a write to digit
+            INCREMENT write
+        ENDFOR
+    ENDIF
+ENDWHILE
+RETURN write 
 ```
