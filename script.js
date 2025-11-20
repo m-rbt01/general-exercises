@@ -191,3 +191,20 @@ function getMinimalDifference(A){
     }
     return minimalDiff;
 }
+
+function getMinimalDays(D, X){
+    if(D.length === 1) return 1;
+    let days = 1; //start at day 1
+    let minDifficulty = D[0];
+    let maxDifficulty = D[0];
+    for(let i = 1; i < D.length; i++){
+        minDifficulty = Math.min(minDifficulty, D[i]); //smallest is min or current
+        maxDifficulty = Math.max(maxDifficulty, D[i]); //largest is max or current
+        if(maxDifficulty - minDifficulty > X){ //exceeds max difference
+            ++days; //start a new day
+            minDifficulty = D[i];
+            maxDifficulty = D[i];
+        }
+    }
+    return days;
+}
