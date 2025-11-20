@@ -121,3 +121,23 @@ function getSymmetryPoint(S){
     }
     return middle;
 }
+
+function getCompressedLength(A){
+    let readPoint = 0;
+    let writePoint = 0
+    while(readPoint < A.length){
+        let char = A[readPoint]; //current character
+        let count = 0; //initial count
+        while(readPoint < A.length && A[readPoint] === char){ //through A until end OR non-repeating char encountered
+            ++readPoint;
+            ++count;
+        }
+        A[writePoint++] = char; //rewrite A beginning with current char then moving to next write point
+        if(count > 1){ //if current character has > 1 instance
+            for(const digit of count.toString()){    
+                A[writePoint++] = digit; //insert digit
+            }
+        }
+    }
+    return writePoint; //return new length
+}
