@@ -1,71 +1,120 @@
-# Day 1 — Arrays + Counting 
-### Focus:
-* O(N) array scanning
-* Tracking seen values using Set
-* Counting with Map
-* Identifying missing or duplicate values
+# 4-WEEK PROBLEM-SOLVING, DATA STRUCTURES, & ALGORITHM TRAINING PLAN
+* 2-3 problems per day (i.e. 1-2 hours)
+* Only review solutions AFTER self-attempt
+* Note down common patterns
+* For mock interviews: 2 easy (15 mins/p) > 2 medium (30 mins/p) > 1 hard (50 mins)
 
-### Practice Problems:
-* Smallest missing integer
-* OddOccurrencesInArray
-* Counting distinct numbers
-* Cyclic rotation (simple but good warmup)
+## Week 1 - Foundations: Array, Hashing, Two Pointers, Prefix Sums
+Goal: Learn to identify when a problem can be solved in O(N) using scanning, hashing, or pointer techniques.
 
-# Day 2 — Sorting + Gaps + Edge Cases
-### Focus:
-* Sorting numbers properly
-* Removing duplicates
-* Detecting gaps in ordered sequences
+### Key Patterns
+* When to use a hash map instead of nested loops
+* Prefix sums for range/difference problems
+* Two pointers for scanning sorted arrays or opposite ends
+* Sliding window for subarray constraints
 
-### Practice Problems:
-* MissingInteger (again, vital)
-* PermMissingElem
-* MaxProductOfThree
-* Find first non-repeating element
+### Problem Sets
+Arrays / Hashing:
+* Two Sum
+* Contains Duplicate
+* First Unique Character
+* Valid Anagram
+* Majority Element
+* Odd Occurrences in Array (Codility)
+* Passing Cars (Codility)
+* Tape Equilibrium (Codility)
 
-# Day 3 — Strings + Hashing
-### Focus:
-* Counting character frequencies
-* Checking balanced parentheses
-* Removing/processing characters
+Prefix Sums:
+* Subarray Sum Equals K
+* Minimum Size Subarray Sum
+* Range Sum Query (immutable)
 
-### Practice Problems:
-* Valid parentheses (stack)
-* First unique character
-* Reversing parts of a string
-* Compressing strings
+Two-Pointer / Sliding Window:
+* Move Zeroes
+* Remove Duplicates from Sorted Array
+* Longest Substring Without Repeating Characters
+* Number of Subarrays with Product < K
 
-# Day 4 — Stacks + Queues + Prefix Sums
-### Focus:
-* Single-pass solutions
-* Using prefix sums for sub-array problems
-* Using stacks for structural problems
+## Week 2 - Intermediate: Sorting, Greedy, Stacks, Queues
+Goal: Recognizing structural patterns that point to optimal O(N log N) or O(N) solutions.
 
-### Practice Problems:
-* Brackets (balanced parentheses)
-* StoneWall
-* PassingCars
-* TapeEquilibrium
+### Key Patterns
+* Greedy decision-making
+* Monotonic stacks
+* When sorting simplifies the problem
+* Recognizing substructure and constraints
 
-# Day 5 — Simulation + Greedy Logic
-### Focus:
-* Iterating with conditions
-* Tracking states
-* Avoiding O(N²) pitfalls
+### Problem Sets
+Sorting + Greedy:
+* Non-overlapping Intervals
+* Merge Intervals
+* Maximum Product of Three
+* Meeting Rooms
+* Assign Cookies
+* Minimum Number of Arrows to Burst Balloons
 
-### Practice Problems:
-* Fish
-* Dominator
-* Train movement–style simulations
-* Minimal movements/problems using greedy logic
+Stacks:
+* Valid Parentheses
+* Min Stack
+* Daily Temperatures
+* Stone Wall (Codility)
 
-# Day 6 — Final Review
-### Focus:
-* Do a full-length Codility mock challenge
-* ≤ 15 min for easy problems
-* ≤ 25–30 min for medium problems
+Queues / Deque:
+* Sliding Window Maximum
+* Recent Counter
 
-### Use:
-* Codility Training section
-* LeetCode (Easy/Medium)
-* Hackerrank Algorithms (Warmup + Arrays)
+## Week 3 - Advanced: Trees, Graphs, Heaps
+Goal: Build intuition around hierarchical structures and optimal retrieval (heap).
+
+### Key Patterns
+* BFS vs DFS
+* When to use a queue vs recursion
+* When heaps (priority queues) simplify ordering problems
+* Graph traversal patterns: visiting once, avoiding cycles
+
+### Problem Sets
+Trees (DFS & BFS):
+* Invert Binary Tree
+* Maximum Depth
+* Balanced Binary Tree
+* Binary Tree Level Order Traversal
+* Lowest Common Ancestor
+
+Graphs:
+* Number of Islands
+* Clone Graph
+* Course Schedule (topological sorting)
+* Rotting Oranges
+* Shortest Path in Binary Matrix (BFS)
+
+Heaps / Priority Queues: 
+* K Closest Points to Origin
+* Merge K Sorted Lists
+* Last Stone Weight
+* Meeting Rooms II (min heap)
+
+## Week 4 - Mastery: Dynamic Programming + Combined Techniques
+Goal: Strengthen pattern recognition for DP and multi-step problems.
+
+### Key Patterns
+* DP on sequences (fib, climbing stairs)
+* Subset / knapsack style DP
+* Optimizing with rolling arrays
+* When greedy fails → DP usually works
+
+### Problem Sets
+1D / Sequence DP:
+* Climbing Stairs
+* House Robber
+* Maximum Subarray (Kadane’s algorithm)
+* Decode Ways
+* Jump Game
+
+String DP:
+* Longest Common Subsequence
+* Edit Distance
+* Longest Palindromic Substring
+
+Grid DP:
+* Unique Paths
+* Minimum Path Sum
