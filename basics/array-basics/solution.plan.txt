@@ -1,0 +1,126 @@
+PROBLEM 1: Create a function that takes an array of numbers, 
+triples only the even numbers in the array, and then sums up 
+the tripled even numbers. 
+
+PLAN:
+    * UI - No UI, program executes in the console.
+    * Input - An array argument (Array, numbers)
+    * Output - A total sum (numbers)
+    * Process - 
+        Get an array of numbers
+        Identify the even numbers
+        Triple the numbers
+        Accumulate a sum of those numbers
+
+ALGORITHM:
+    CALL function and PASS an array of numbers
+        FOR EACH number in the array
+            CALL filter to get even numbers
+            CALL map to get tripled even numbers
+            CALL reduce to get total sum of tripled, 
+            even numbers
+        ENDFOR
+        RETURN the total sum
+    ENDFUNCTION 
+
+***********************************************************
+
+PROBLEM 2: Create a function that takes a string separated by 
+dashes (-), and returns a new string converted into camelCase
+convention.
+
+PLAN:
+    * UI - no UI
+    * Input - string 
+    * Output - converted string
+    * Process - 
+        Get a string
+        remove the dashes
+        convert into camelCase
+
+ALGORITHM:
+    CALL function and PASS a string with dash separators
+        CALL split to remove dashes, store in an array
+        CALL map to convert strings into cameCase
+            IF the string is the first element THEN
+                return unchanged string
+            ENDIF
+            CAPITALIZE only the initial character
+        ENDCALL
+        CALL join to convert the camelCase array into a string
+    ENDCALL
+
+*************************************************************
+
+PROBLEM 3: Create a function that filters an array to only 
+store elements that are within a specified range. The original 
+array is modified, there is no return value.
+
+PLAN:
+    * UI - No UI
+    * Input - array of numbers
+    * Output - No Output
+    * Process - 
+        Get array
+        identify the numbers within range
+        remove numbers outside of the range
+
+ALGORITHM:
+    CALL function and PASS an array of numbers
+        FOR every number in the array
+            IF the current number is outside of range THEN
+                CALL splice to remove the current number
+                DECREMENT the current iteration to not skip the next element
+            ENDIF
+        ENDFOR
+    ENDCALL
+
+*****************************************************************
+
+PROBLEM 4: Create a function that takes an array of numbers and 
+shuffles the original array in a random order. Each random ordering 
+should share an equal probability.
+
+PLAN: 
+    * UI - no UI
+    * Input - array of numbers
+    * Output - no Output
+    * Process -
+        Get array of numbers
+        calculate a random ordering
+        sort the array
+
+ALGORITHM:
+    CALL function and PASS an array of numbers
+        FOR every number in the array in reverse
+            CALCULATE a random index between 0 and the current iteration
+            SWAP the current element with the random element using the random index
+        ENDFOR
+    ENDCALL
+
+********************************************************************
+
+PROBLEM 5: Create a function that takes an array of strings and
+returns a new array containing only unique strings. The original array 
+should not be modified.
+
+PLAN:
+    * UI - no UI
+    * Input - array of strings
+    * Output - array of unique strings
+    * Process -
+        Get array of strings
+        Identify the unique strings
+        create an array of the unique strings
+
+ALGORITHM: only good for small arrays, too many comparisons for large arrays
+    CALL function and PASS an array of strings
+        CREATE a new array
+        FOR every string in the array
+            IF the current string IS NOT found in the new array THEN
+                add the current string into the new array
+            ENDIF
+        ENDFOR
+        RETURN the new array
+    ENDCALL
+

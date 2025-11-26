@@ -1,0 +1,89 @@
+PROBLEM: Create a function that simulates boxes falling down a matrix 
+and returns the final state of the matrix. Each cell is either 
+empty (-), a box (#), or an explosive obstacle (*). Boxes fall down 
+simultaneously all the way down to the bottom, unless they stacks on top of another box or obstacle. If a box 
+stacks on top of an obstacle, the obstacle's current 8 surrounding cells (3x3) are 
+deleted. Obstacles do not move and cannot be deleted, even after explosions. 
+
+PLAN:
+    UI - No UI
+    Input - A 2D array including rows and columns, with (-), (#), (*) cells
+    Output - A final state 2D array after all boxes have fallen
+    Process - 
+        Get the 2D array
+        start at the bottom of the array
+        find the closest box that can fall down to the ground
+        swap the closest falling box with the grounded empty cell (establish grounded state)
+        delete 8 (3x3) surrounding cells if an obstacle is encountered
+        repeat until all columns have fallen
+
+ALGORITHM:
+    CALL function and PASS 2D array
+        STORE the array's number of rows
+        STORE the array's number of columns
+        FOR every row in the array, starting from the bottom, stop at the second row
+            FOR every column in the current row
+                STORE ground row Index as -1
+                FOR every row within current column, starting from the current outer row moving up
+                    IF ground index is -1 AND the current cell is empty THEN
+                        ASSIGN current row index to ground row index
+                    ENDIF
+                    ELSE-IF ground index is not -1 AND the current cell is an obstacle THEN
+                        RESET ground row index back to -1 to continue search
+                    ENDIF
+                    ELSE-IF ground index is not -1 AND the current cell is a box THEN
+                        SWAP the grounded cell with the current box cell
+                        ASSIGN the current row iterator index to the ground index
+                        RESET the ground index to -1
+                    ENDIF
+                ENDFOR
+            ENDFOR
+        ENDFOR
+    ENDCALL
+
+    CALL deleteSurroundingCells and PASS the array, obstacle column index, and obstacle row index
+        STORE bottom explode boolean
+        STORE top explode boolean
+        IF the current row index is less than the last row THEN
+            IF the bottom cell is not an obstacle THEN
+                ASSIGN empty to the bottom cell
+            ENDIF
+            ASSIGN true to variable that indicates bottom explosion
+        ENDIF
+        IF the current row index is greater than the first row THEN
+            IF the top cell is NOT an obstacle THEN 
+                ASSIGN empty to the top cell
+            ENDIF
+            ASSIGN true to variable that indicates top explosion
+        ENDIF
+        IF the current column index is greater than than the first column THEN
+            IF the left cell is NOT an obstacle THEN
+                ASSIGN empty to the left cell
+            ENDIF
+            IF bottom explode is true THEN
+                IF bottom left cell is NOT an obstacle THEN
+                    ASSIGN empty to bottom left cell
+                ENDIF
+            ENDIF
+            IF top explode is true THEN
+                IF top left cell is NOT an obstacle THEN
+                    ASSIGN empty to top left cell
+                ENDIF
+            ENDIF
+        ENDIF
+        IF the current column index is less than the last column THEN
+            IF the right cell is NOT an obstacle THEN
+                ASSIGN empty to the right cell
+            ENDIF
+            IF bottom explode is true THEN
+                IF bottom right cell is NOT an obstacle THEN
+                    ASSIGN empty to bottom right cell
+                ENDIF
+            ENDIF
+            IF top explode is true THEN
+                IF top right cell is NOT an obstacle THEN
+                    ASSIGN empty to top right cell
+                ENDIF
+            ENDIF
+        ENDIF
+    ENDCALL
