@@ -208,3 +208,12 @@ function getMinimalDays(D, X){
     }
     return days;
 }
+
+function getTwoSum(A, X){
+    const complements = new Map();
+    for(let i = 0; i < A.length; i++){
+        let complement = X - A[i];
+        if(complements.has(complement)) return [complements.get(complement), i];
+        complements.set(A[i], i);
+    }
+}
