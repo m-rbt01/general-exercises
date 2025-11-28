@@ -235,3 +235,17 @@ function checkIsDuplicate(A){
     }
     return false;
 }
+
+function checkIsAnagram(S, T){
+    if(S.length !== T.length) return false;
+    const occurrences = new Map();
+    for(let c = 0; c < S.length; c++){
+        occurrences.set(S[c], (occurrences.get(S[c]) || 0) + 1);
+    }
+    for(let c = 0; c < T.length; c++){
+        if(!occurrences.has(T[c])) return false;
+        occurrences.set(T[c], occurrences.get(T[c]) - 1);
+        if(occurrences.get(T[c]) < 0) return false;
+    }
+    return true;
+}
