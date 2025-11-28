@@ -17,7 +17,7 @@ Answer: false
 * **UI** - command line
 * **Input** - array A of N integers
 * **Output** - true or false
-* **Process** - _get array > track encountered nums > return true when duplicate is encountered > return false otherwise
+* **Process** - _get array > track encountered nums > return true when duplicate is encountered > return false otherwise_
 
 # Algorithm
 ```js
