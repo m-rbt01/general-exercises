@@ -15,14 +15,14 @@ Goal: Learn to identify when a problem can be solved in O(N) using scanning, has
 
 ### Problem Sets
 Arrays / Hashing:
-* Two Sum
-* Contains Duplicate
-* First Unique Character
-* Valid Anagram
-* Majority Element
-* Odd Occurrences in Array (Codility)
-* Passing Cars (Codility)
-* Tape Equilibrium (Codility)
+- [x] Two Sum
+- [x] Contains Duplicate
+- [x] First Unique Character
+- [ ] Valid Anagram
+- [ ] Majority Element
+- [x] Odd Occurrences in Array (Codility)
+- [x] Passing Cars (Codility)
+- [x] Tape Equilibrium (Codility)
 
 Prefix Sums:
 * Subarray Sum Equals K
