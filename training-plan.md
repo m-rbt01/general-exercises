@@ -18,7 +18,7 @@ Arrays / Hashing:
 - [x] Two Sum
 - [x] Contains Duplicate
 - [x] First Unique Character
-- [ ] Valid Anagram
+- [x] Valid Anagram
 - [ ] Majority Element
 - [x] Odd Occurrences in Array (Codility)
 - [x] Passing Cars (Codility)
