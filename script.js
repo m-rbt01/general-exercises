@@ -217,3 +217,21 @@ function getTwoSum(A, X){
         complements.set(A[i], i);
     }
 }
+
+function checkIsDuplicate(A){
+    /*Functional solution, BUT unnecessary counting
+    const occurrences = new Map();
+    for(let i = 0; i < A.length; i++){
+        occurrences.set(A[i], (occurrences.get(A[i]) || 0) + 1);
+        if(occurrences.get(A[i]) > 1) return true;
+    }
+    return false;*/
+    
+    //Easier to read solution (same time/space complexity): use sets for tracking uniques/duplicates
+    const encountered = new Set();
+    for(let i = 0; i < A.length; i++){
+        if(encountered.has(A[i])) return true;
+        encountered.add(A[i]);
+    }
+    return false;
+}
