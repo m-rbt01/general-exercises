@@ -25,15 +25,15 @@ Arrays / Hashing:
 - [x] Tape Equilibrium (Codility)
 
 Prefix Sums:
-* Subarray Sum Equals K
-* Minimum Size Subarray Sum
-* Range Sum Query (immutable)
+- [ ] Subarray Sum Equals K
+- [ ] Minimum Size Subarray Sum
+- [ ] Range Sum Query (immutable)
 
 Two-Pointer / Sliding Window:
-* Move Zeroes
-* Remove Duplicates from Sorted Array
-* Longest Substring Without Repeating Characters
-* Number of Subarrays with Product < K
+- [ ] Move Zeroes
+- [ ] Remove Duplicates from Sorted Array
+- [ ] Longest Substring Without Repeating Characters
+- [ ] Number of Subarrays with Product < K
 
 ## Week 2 - Intermediate: Sorting, Greedy, Stacks, Queues
 Goal: Recognizing structural patterns that point to optimal O(N log N) or O(N) solutions.
@@ -46,22 +46,22 @@ Goal: Recognizing structural patterns that point to optimal O(N log N) or O(N) s
 
 ### Problem Sets
 Sorting + Greedy:
-* Non-overlapping Intervals
-* Merge Intervals
-* Maximum Product of Three
-* Meeting Rooms
-* Assign Cookies
-* Minimum Number of Arrows to Burst Balloons
+- [ ] Non-overlapping Intervals
+- [ ] Merge Intervals
+- [ ] Maximum Product of Three
+- [ ] Meeting Rooms
+- [ ] Assign Cookies
+- [ ] Minimum Number of Arrows to Burst Balloons
 
 Stacks:
-* Valid Parentheses
-* Min Stack
-* Daily Temperatures
-* Stone Wall (Codility)
+- [ ] Valid Parentheses
+- [ ] Min Stack
+- [ ] Daily Temperatures
+- [ ] Stone Wall (Codility)
 
 Queues / Deque:
-* Sliding Window Maximum
-* Recent Counter
+- [ ] Sliding Window Maximum
+- [ ] Recent Counter
 
 ## Week 3 - Advanced: Trees, Graphs, Heaps
 Goal: Build intuition around hierarchical structures and optimal retrieval (heap).
@@ -74,24 +74,24 @@ Goal: Build intuition around hierarchical structures and optimal retrieval (heap
 
 ### Problem Sets
 Trees (DFS & BFS):
-* Invert Binary Tree
-* Maximum Depth
-* Balanced Binary Tree
-* Binary Tree Level Order Traversal
-* Lowest Common Ancestor
+- [ ] Invert Binary Tree
+- [ ] Maximum Depth
+- [ ] Balanced Binary Tree
+- [ ] Binary Tree Level Order Traversal
+- [ ] Lowest Common Ancestor
 
 Graphs:
-* Number of Islands
-* Clone Graph
-* Course Schedule (topological sorting)
-* Rotting Oranges
-* Shortest Path in Binary Matrix (BFS)
+- [ ] Number of Islands
+- [ ] Clone Graph
+- [ ] Course Schedule (topological sorting)
+- [ ] Rotting Oranges
+- [ ] Shortest Path in Binary Matrix (BFS)
 
 Heaps / Priority Queues: 
-* K Closest Points to Origin
-* Merge K Sorted Lists
-* Last Stone Weight
-* Meeting Rooms II (min heap)
+- [ ] K Closest Points to Origin
+- [ ] Merge K Sorted Lists
+- [ ] Last Stone Weight
+- [ ] Meeting Rooms II (min heap)
 
 ## Week 4 - Mastery: Dynamic Programming + Combined Techniques
 Goal: Strengthen pattern recognition for DP and multi-step problems.
@@ -104,17 +104,17 @@ Goal: Strengthen pattern recognition for DP and multi-step problems.
 
 ### Problem Sets
 1D / Sequence DP:
-* Climbing Stairs
-* House Robber
-* Maximum Subarray (Kadane’s algorithm)
-* Decode Ways
-* Jump Game
+- [ ] Climbing Stairs
+- [ ] House Robber
+- [ ] Maximum Subarray (Kadane’s algorithm)
+- [ ] Decode Ways
+- [ ] Jump Game
 
 String DP:
-* Longest Common Subsequence
-* Edit Distance
-* Longest Palindromic Substring
+- [ ] Longest Common Subsequence
+- [ ] Edit Distance
+- [ ] Longest Palindromic Substring
 
 Grid DP:
-* Unique Paths
-* Minimum Path Sum
+- [ ] Unique Paths
+- [ ] Minimum Path Sum
