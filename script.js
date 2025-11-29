@@ -251,7 +251,6 @@ function checkIsAnagram(S, T){
 }
 
 function getGroupAnagram(A){
-    if(A.length === 1) return [A];
     const groups = new Map();
     const CHAR_OFFSET = 97;
     for(const word of A){
