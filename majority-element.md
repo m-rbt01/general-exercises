@@ -16,7 +16,7 @@ Answer: 2
 * **UI** - command line
 * **Input** - array A of N integers
 * **Output** - the majority element 
-* **Process** - _get array > verify N is greater than 1 > count instances of elements > return majority element
+* **Process** - _get array > track majority count > return majority element
 
 # Algorithm
 **NOTES**: The [Boyer–Moore algorithm](https://www.tutorialspoint.com/data_structures_algorithms/boyer_moore_algorithm.htm) is used for pattern searching. It determines if a given pattern is present in within a specified text. This approach cancels out a candidate's count upon unmatched pairs, then a new candidate begins. Because this problem guarantees a majority element that is present over half the length, it's count will outlast any unmatched pair cancellations.
