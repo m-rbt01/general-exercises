@@ -20,7 +20,7 @@ Arrays / Hashing:
 - [x] First Unique Character
 - [x] Valid Anagram
 - [x] Group Anagram
-- [ ] Majority Element
+- [x] Majority Element
 - [x] Odd Occurrences in Array (Codility)
 - [x] Passing Cars (Codility)
 - [x] Tape Equilibrium (Codility)
