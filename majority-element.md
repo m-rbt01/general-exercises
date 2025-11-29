@@ -19,16 +19,22 @@ Answer: 2
 * **Process** - _get array > verify N is greater than 1 > count instances of elements > return majority element
 
 # Algorithm
+**NOTES**: The [Boyer–Moore algorithm](https://www.tutorialspoint.com/data_structures_algorithms/boyer_moore_algorithm.htm) is used for pattern searching. It determines if a given pattern is present in within a specified text. This approach cancels out a candidate's count upon unmatched pairs, then a new candidate begins. Because this problem guarantees a majority element that is present over half the length, it's count will outlast any unmatched pair cancellations.
 ```js
 FUNCTION: getMajorityElem(A)
-DECLARE occurrences map
-SET majority count to N / 2
-FOR nums in A
-    SET nums key in occurrences to (current value OR 0) plus 1
-ENDFOR
-FOR keys and values in occurrences
-    IF value IS GREATER THAN majority count THEN
-        RETURN key
+SET majority num to null
+SET count to 0
+FOR nums of A
+    IF count IS EQUAL TO 0 THEN
+        SET majority num to num
+        SET count to 1
     ENDIF
+    ELSE-IF num IS EQUAL TO majority num THEN
+        INCREMENT count
+    ENDELSE-IF
+    ELSE
+        DECREMENT count
+    ENDELSE
 ENDFOR
+RETURN majority num
 ```
