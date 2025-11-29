@@ -249,3 +249,19 @@ function checkIsAnagram(S, T){
     }
     return true;
 }
+
+function getGroupAnagram(A){
+    if(A.length === 1) return [A];
+    const groups = new Map();
+    const CHAR_OFFSET = 97;
+    for(const word of A){
+        const occurrences = new Array(26).fill(0); //holds occurrences for each lowercase english letter
+        for(const char of word){
+            ++occurrences[char.charCodeAt(0) - CHAR_OFFSET]; //count occurrences of each char in word
+        }
+        const anagramKey = occurrences.join('#'); //anagrams share same occurrences
+        if(!groups.has(anagramKey)) groups.set(anagramKey, []);
+        groups.get(anagramKey).push(word);
+    }
+    return Array.from(groups.values());
+}
