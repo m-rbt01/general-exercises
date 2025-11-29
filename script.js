@@ -264,3 +264,26 @@ function getGroupAnagram(A){
     }
     return Array.from(groups.values());
 }
+
+function getMajorityElem(A){
+    /*Function solution O(N) time, BUT not space optimal O(N) map increases with N size (required for problem)
+    const occurrences = new Map();
+    const MAJORITY_COUNT = A.length / 2;
+    for(const num of A){
+        occurrences.set(num, (occurrences.get(num) || 0) + 1);
+        if(occurrences.get(num) > MAJORITY_COUNT) return num;
+    }*/
+
+    //Space optimal solution O(1): use counter instead of map
+    let majorityElem = null;
+    let count = 0;
+    for(const num of A){
+        if(count === 0){
+            majorityElem = num;
+            count = 1;
+        }
+        else if(num === majorityElem) ++count;
+        else --count;
+    }
+    return majorityElem;
+}
