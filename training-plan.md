@@ -19,7 +19,7 @@ Arrays / Hashing:
 - [x] Contains Duplicate
 - [x] First Unique Character
 - [x] Valid Anagram
-- [ ] Group Anagram
+- [x] Group Anagram
 - [ ] Majority Element
 - [x] Odd Occurrences in Array (Codility)
 - [x] Passing Cars (Codility)
