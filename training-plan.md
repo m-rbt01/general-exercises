@@ -27,7 +27,7 @@ Arrays / Hashing:
 
 Prefix Sums:
 - [x] Subarray Sum Equals K
-- [ ] Minimum Size Subarray Sum
+- [x] Minimum Size Subarray Sum
 - [ ] Range Sum Query (immutable)
 
 Two-Pointer / Sliding Window:
