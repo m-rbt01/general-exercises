@@ -26,7 +26,7 @@ Arrays / Hashing:
 - [x] Tape Equilibrium (Codility)
 
 Prefix Sums:
-- [ ] Subarray Sum Equals K
+- [x] Subarray Sum Equals K
 - [ ] Minimum Size Subarray Sum
 - [ ] Range Sum Query (immutable)
 
