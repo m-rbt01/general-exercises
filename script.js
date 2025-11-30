@@ -301,3 +301,18 @@ function getSubarrayCount(A, K){
     }
     return count;
 }
+
+function getMinimalSubarraySize(A, T){
+    let sum = 0;
+    let left = 0;
+    let minimalSize = Infinity;
+    for(let right = 0; right < A.length; right++){
+        sum += A[right];
+        while(sum >= T){
+            minimalSize = Math.min(minimalSize, right - left + 1)
+            sum -= A[left];
+            ++left;
+        }
+    }
+    return (minimalSize === Infinity) ? 0 : minimalSize;
+}
