@@ -287,3 +287,17 @@ function getMajorityElem(A){
     }
     return majorityElem;
 }
+
+function getSubarrayCount(A, K){
+    const prefixSum = new Map([
+        [0, 1]
+    ]);
+    let count = 0;
+    let currentSum = 0;
+    for(const num of A){
+        currentSum += num;
+        if(prefixSum.has(currentSum - K)) count += prefixSum.get(currentSum - K);
+        prefixSum.set(currentSum, (prefixSum.get(currentSum) || 0) + 1);
+    }
+    return count;
+}
