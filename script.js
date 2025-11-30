@@ -316,3 +316,12 @@ function getMinimalSubarraySize(A, T){
     }
     return (minimalSize === Infinity) ? 0 : minimalSize;
 }
+
+function getSumRange(A, left, right){
+    const prefixSum = new Array(A.length);
+    prefixSum[0] = A[0];
+    for(let i = 1; i < A.length; i++){
+        prefixSum[i] = prefixSum[i - 1] + A[i];
+    }
+    return (left === 0) ? prefixSum[right] : prefixSum[right] - prefixSum[left - 1];
+}
