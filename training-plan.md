@@ -31,7 +31,7 @@ Prefix Sums:
 - [x] Range Sum Query (immutable)
 
 Two-Pointer / Sliding Window:
-- [ ] Move Zeroes
+- [x] Move Zeroes
 - [ ] Remove Duplicates from Sorted Array
 - [ ] Longest Substring Without Repeating Characters
 - [ ] Number of Subarrays with Product < K
