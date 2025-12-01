@@ -325,3 +325,28 @@ function getSumRange(A, left, right){
     }
     return (left === 0) ? prefixSum[right] : prefixSum[right] - prefixSum[left - 1];
 }
+
+function getShiftedArray(A){
+    /* OPTIMAL SOLUTION w/ O(N) time and O(1) space complexity, avoids unnecessary swaps but with non-standard naming
+    let nonZeroIndex = -1;
+    for(let j = 0; j < A.length; j++){
+        if(A[j] !== 0){
+            ++nonZeroIndex;
+            if(nonZeroIndex !== j){
+                A[nonZeroIndex] = A[j];
+                A[j] = 0;
+            }
+        }
+    }
+    return A;*/
+
+    //Same optimal solution but always swaps (using destructuring syntax [a, b] = [b, a]) and has standard naming
+    let writeIndex = 0;
+    for(let readIndex = 0; readIndex < A.length; readIndex++){
+        if(A[readIndex] !== 0){
+            [A[writeIndex], A[readIndex]] = [A[readIndex], A[writeIndex]];
+            ++writeIndex;
+        }
+    }
+    return A;
+}
