@@ -32,7 +32,7 @@ Prefix Sums:
 
 Two-Pointer / Sliding Window:
 - [x] Move Zeroes
-- [ ] Remove Duplicates from Sorted Array
+- [x] Remove Duplicates from Sorted Array
 - [ ] Longest Substring Without Repeating Characters
 - [ ] Number of Subarrays with Product < K
 
