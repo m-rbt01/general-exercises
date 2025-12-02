@@ -1,3 +1,5 @@
+const { read } = require("fs");
+
 function getDistinctCount(A){
     const uniqueValues = new Set();
     A.forEach((item) => uniqueValues.add(item));
@@ -349,4 +351,15 @@ function getShiftedArray(A){
         }
     }
     return A;
+}
+
+function getUniqueArraySize(A){
+    let writeIndex = 1;
+    for(let readIndex = 1; readIndex < A.length; readIndex++){
+        if(A[readIndex] !== A[writeIndex - 1]){
+            A[writeIndex] = A[readIndex];
+            ++writeIndex;
+        }
+    }
+    return writeIndex;
 }
