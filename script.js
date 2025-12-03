@@ -288,7 +288,7 @@ function getMajorityElem(A){
     return majorityElem;
 }
 
-function getSubarrayCount(A, K){
+function getSubarraySumCount(A, K){
     const prefixSum = new Map([
         [0, 1]
     ]);
