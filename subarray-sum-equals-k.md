@@ -21,7 +21,7 @@ Answer: 2
 # Algorithm
 **NOTES**: A prefix sum is an array of size N, and each element represents the accumulated sum from A[0] - A[i]. Use this approach to find the sum of any subarray A[i...j] (_i.e. sum = prefixSum[j] - prefixSum[i - 1]_). The following algorithm uses a hashmap to track previous prefix sums that represent a checkpoint from then to the current sum, which adds up to K ([video explanation](https://www.youtube.com/watch?v=fFVZt-6sgyo)).
 ```js
-FUNCTION: getSubarrayCount(A, K)
+FUNCTION: getSubarraySumCount(A, K)
 SET prefix sum map to 0:1
 SET count to 0
 SET current sum to 0
