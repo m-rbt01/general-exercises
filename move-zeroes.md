@@ -20,7 +20,7 @@ Answer: [0]
 # Algorithm
 **NOTES**: The **Two-Pointer algorithm** is used to solve problems involving linear data structures (_e.g arrays_), by using two pointers (e.g. _left/right or read/write_). The pointers help traverse the data structure to find pairs, subarrays, or other elements that satisfy a given condition. This is useful to process two elements per loop iteration.
 ```js
-FUNCTION getShiftedArray(A)
+FUNCTION getNonZeroArray(A)
 SET write to 0
 FOR nums of A starting at read:0
     IF num IS NOT EQUAL to 0 THEN
