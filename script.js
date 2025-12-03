@@ -328,7 +328,7 @@ function getSumRange(A, left, right){
     return (left === 0) ? prefixSum[right] : prefixSum[right] - prefixSum[left - 1];
 }
 
-function getShiftedArray(A){
+function getNonZeroArray(A){
     /* OPTIMAL SOLUTION w/ O(N) time and O(1) space complexity, avoids unnecessary swaps but with non-standard naming
     let nonZeroIndex = -1;
     for(let j = 0; j < A.length; j++){
