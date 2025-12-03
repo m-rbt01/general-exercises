@@ -34,7 +34,7 @@ Two-Pointer / Sliding Window:
 - [x] Move Zeroes
 - [x] Remove Duplicates from Sorted Array
 - [x] Longest Substring Without Repeating Characters
-- [ ] Number of Subarrays with Product < K
+- [x] Subarray product less than K
 
 ## Week 2 - Intermediate: Sorting, Greedy, Stacks, Queues
 Goal: Recognizing structural patterns that point to optimal O(N log N) or O(N) solutions.
