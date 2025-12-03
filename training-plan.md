@@ -33,7 +33,7 @@ Prefix Sums:
 Two-Pointer / Sliding Window:
 - [x] Move Zeroes
 - [x] Remove Duplicates from Sorted Array
-- [ ] Longest Substring Without Repeating Characters
+- [x] Longest Substring Without Repeating Characters
 - [ ] Number of Subarrays with Product < K
 
 ## Week 2 - Intermediate: Sorting, Greedy, Stacks, Queues
