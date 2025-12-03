@@ -1,5 +1,3 @@
-const { read } = require("fs");
-
 function getDistinctCount(A){
     const uniqueValues = new Set();
     A.forEach((item) => uniqueValues.add(item));
@@ -362,4 +360,19 @@ function getUniqueArraySize(A){
         }
     }
     return writeIndex;
+}
+
+function getMaxSubstringSize(S){
+    let left = 0;
+    let maxSize = 0;
+    const encountered = new Map();
+    for(let right = 0; right < S.length; right++){
+        if(encountered.has(S[right]) && encountered.get(S[right]) >= left){
+            //when current char already exists AND is inside current window
+            left = encountered.get(S[right]) + 1; //shorten window by moving left in front of its previous index
+        }
+        encountered.set(S[right], right); //update index of encountered char
+        maxSize = Math.max(maxSize, right - left + 1); //update max size to the largest substring size so far
+    }
+    return maxSize;
 }
