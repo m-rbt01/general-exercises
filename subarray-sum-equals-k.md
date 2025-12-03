@@ -19,7 +19,7 @@ Answer: 2
 * **Process** - _get array A and integer K > create a prefix sum > track count of sums that equal K > return count_
 
 # Algorithm
-**NOTES**: A prefix sum is an array of size N, and each element represents the accumulated sum from A[0] - A[i]. Use this approach to find the sum of any subarray A[i...j] (_i.e. sum = prefixSum[j] - prefixSum[i - 1]_). The following algorithm uses a hashmap to track previous prefix sums that represent a checkpoint from then to the current sum, which adds up to K ([video explanation](https://www.youtube.com/watch?v=fFVZt-6sgyo)).
+**NOTES**: A **prefix sum** is an array of size N, and each element represents the accumulated sum from A[0] - A[i]. Use this approach to find the sum of any subarray A[i...j] (_i.e. sum = prefixSum[j] - prefixSum[i - 1]_). The following algorithm uses a hashmap to track previous prefix sums that represent a checkpoint from then to the current sum, which adds up to K ([video explanation](https://www.youtube.com/watch?v=fFVZt-6sgyo)).
 ```js
 FUNCTION: getSubarraySumCount(A, K)
 SET prefix sum map to 0:1

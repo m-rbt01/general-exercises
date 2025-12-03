@@ -21,7 +21,7 @@ Answer: 0 (no subarray sum = T)
 * **Process** - _get array A and integer T > _
 
 # Algorithm
-**NOTES**: A **sliding window** is a pattern searching algorithm used on arrays, strings, and lists. It maintains a window (_contiguous subsection_) of elements and moves the window across the data structure. The window is set with pointers left and right. Moving the right pointer includes new elements in the window, move left pointer to remove elements. Keep track of the result as the window moves, repeat the process until you reach the end of the data structure. This approach is useful for finding a subsection that meets certain conditions (_e.g. related to sum, average, maximum, minimum, unique elements within a range_), especially when all values are positive (_negative values would decrease sum_).
+**NOTES**: A **sliding window** is a pattern searching algorithm used on arrays, strings, and lists. It maintains a window (_contiguous subsection_) of elements and moves the window across the data structure. The window is set with pointers left and right. Moving the right pointer includes new elements in the window, move left pointer to remove elements. Keep track of the result as the window moves, repeat the process until you reach the end of the data structure. This approach is useful for finding a subsection that meets certain conditions (_e.g. related to sum, average, maximum, minimum, unique elements within a range_), requires all values to be positive (_negative values would decrease result_).
 ```js
 FUNCTION: getMinimalSubarraySize(A, T)
 SET sum to 0
