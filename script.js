@@ -376,3 +376,19 @@ function getMaxSubstringSize(S){
     }
     return maxSize;
 }
+
+function getSubarrayProdCount(A, K){
+    if(K <= 1) return 0; //no subarray exists if K <= 1 since A[i] is always >= 1
+    let left = 0;
+    let currProduct = 1; //starting with one element needs to result in itself for product
+    let count = 0;
+    for(let right = 0; right < A.length; right++){
+        currProduct *= A[right]; //accumulate product from left - right
+        while(currProduct >= K && left <= right){ //shrink window when product >= K without going past right
+            currProduct /= A[left]; //remove left most product to get shrink product
+            ++left; //shrink window to reflect shrunken product (needs to increment past right in case no valid subarrays for count)
+        }
+        count += (right - left + 1); //total # of valid subarrays up until right is always # of elements within each subarray
+    }
+    return count;
+}
