@@ -20,26 +20,14 @@ K = 3
 
 # Algorithm
 ```js
-/*Functional solution for small arrays (slow for large ones)
-Time Complexity O(K * N): runs K times, unshifts each element
-*/
-FOR k times 
-    SET last item to POPPED array return value
-    UNSHIFT last item to the start of the array
-ENDFOR
-RETURN array
-
-/*Direct solution instead of shifting all elements K times
-Time Complexity O(N): goes through each element once
-*/
+FUNCTION: getRotatedArray(A, K)
 IF given array is empty THEN
     RETURN empty array
 ENDIF
-DECLARE empty array of N elements
-FOREACH through given array
-    SET shift index to (current index + K) % N elements
-    //Modulus ensures wrapping
-    SET empty array at shift index to given array value
+DECLARE empty array of A length
+FOREACH nums of array
+    SET shift index to (current index + K) % A length
+    SET empty array at shift index to current number 
 ENDFOREACH
 RETURN rotated array
 ```

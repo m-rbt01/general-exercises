@@ -1,5 +1,5 @@
 # Problem
-Given an array chars of N characters, group repeating characters and append their number of instances to string S. Return the length of the new array.
+Given an array chars of N characters, group repeating characters and append their number of occurrences to string S. Return the length of the new array.
 ```js
 Input: chars = ["a","a","b","b","c","c","c"]
 Output: Return 6, and the first 6 characters of the input array should be: ["a","2","b","2","c","3"]
@@ -15,7 +15,7 @@ Input: chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
 Output: Return 4, and the first 4 characters of the input array should be: ["a","b","1","2"].
 Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 ```
-* Unique characters are not appended their instance of 1
+* Unique characters are not appended for occurrence of 1
 * N is an integer between 1 - 2,000
 * Each character is either an uppercase or lowercase letter, digit, or symbol
 
@@ -27,7 +27,7 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 
 # Algorithm
 ```js
-FUNCTION: getCompressedLength(A)
+FUNCTION: getCompressedStrLength(A)
 SET index to 0
 SET write index to 0
 WHILE index IS LESS THAN a length

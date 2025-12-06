@@ -16,6 +16,7 @@ Answer = 5, not 2 (because index 2 is < index 4)
 
 # Algorithm
 ```js
+FUNCTION: getFirstUniqueElem(A)
 DECLARE count map
 FOREACH item in array
     SET count key of item TO VALUE itself or 0 plus 1

@@ -15,8 +15,11 @@ Answer = 4
 * Process - _get array > calculate expected sum > calculate actual sum > subtract difference > return difference_
 
 # Algorithm
+**NOTES**: The **summation formula** (_i.e. **n * (n + 1) / 2**_) sums a specific sequence of numbers up until a given number (_i.e. last element in permutation array_) without manually adding each individual number. The following solution uses this formula to find the expected sum of all elements, and subtracts the actual sum from it to get the missing element.
 ```js
-SET expected sum to N+1 * N+2 / 2
+FUNCTION: getPermMissingElem(A)
+SET N to A length plus 1 (include last element value after array indexing)
+SET expected sum to N * N+1 / 2
 SET actual sum to A REDUCED to the accumulated sum
 RETURN the difference
 ```

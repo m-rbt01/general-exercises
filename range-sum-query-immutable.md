@@ -25,7 +25,7 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 
 # Algorithm
 ```js
-FUNCTION getSumRange(A, left, right)
+FUNCTION getRangeSum(A, left, right)
 SET prefix sum array to new array of length A
 FOR nums of A starting at i:1
     SET prefix sum at i to sum of num and previous prefix sum

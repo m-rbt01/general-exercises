@@ -25,7 +25,7 @@ return days_
 
 # Algorithm
 ```js
-FUNCTION: getMinimalDays(D, H)
+FUNCTION: getMinMissionDays(D, H)
 IF d length is 1 THEN
 	RETURN 1
 ENDIF

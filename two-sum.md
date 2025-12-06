@@ -23,8 +23,9 @@ Answer: [0,1]
 * **Process** - _get A and X > determine sum of 2 elements that = target > return 2 indices 
 
 # Algorithm
+**NOTES**: A **hash map** is a data structure that stores data as key-value pairs as a hash table (i.e. an array), and uses a hash function to convert keys into an index where the value is stored. A hash functions allow hash maps to insert, delete, and retrieve elements at O(1) time complexity. To return the indices of two elements whose sum equals X, use a map the numbers encountered with their index, and return the correct indices when the first two complements have been mapped
 ```js
-FUNCTION: getTwoSum(A, X)
+FUNCTION: getTwoSumIndices(A, X)
 DECLARE complements map
 FOR elem in A
     SET complement to X - elem

@@ -25,7 +25,7 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 
 # Algorithm
 ```js
-FUNCTION: getMaxSubstringSize(S)
+FUNCTION: getMaxUniqueSubstrSize(S)
 SET left to 0
 SET max size to 0
 DECLARE encountered map

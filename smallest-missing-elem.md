@@ -11,7 +11,8 @@ given an array A of N integers, return the smallest positive integer (greater th
 * Process - Function is called > A is passed > find smallest positive integer not in A > return the result
 
 # Algorithm
-```javascript
+```js
+FUNCTION: getSmallestMissingElem(A)
 DECLARE empty set
 FOREACH item in array
     IF item IS GREATER THAN zero THEN

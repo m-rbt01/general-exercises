@@ -26,7 +26,7 @@ Answer: 1
 
 # Algorithm
 ```js
-FUNCTION: getMinimalDifference(A)
+FUNCTION: getMinSubarrayDifference(A)
 IF a length EQUALS 2 THEN
     RETURN first and last element difference
 ENDIF

@@ -19,7 +19,7 @@ Answer: 5 //(0, 1), (0, 3), (0, 4), (2, 3), (2, 4)
 
 # Algorithm
 ```js
-FUNCTION: getPassingPairs(A)
+FUNCTION: getPassingCarsCount(A)
 SET constant max count to 1,000,000,000
 SET count to 0
 SET eastCars to 0

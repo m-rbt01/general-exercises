@@ -16,6 +16,7 @@ Answer = A[2] * A[4] * A[5] = 2 * 5 * 6 = 60
 
 # Algorithm
 ```js
+FUNCTION: getMaxProductOfThree(A)
 SORT array
 SET low end product to the product of first 3 elements
 SET high end product to the product of last 3 elements

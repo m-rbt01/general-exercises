@@ -1,5 +1,6 @@
 # Problem
-Given an array A of N integers, return the majority element.
+Given an array A of N integers, return the majority element, which appears more than (N / 2) times (_i.e. over half the time_).
+
 ```js
 A = [3,2,3]
 Answer: 3
@@ -9,7 +10,6 @@ Answer: 2
 ```
 * N is an integer between 1 - 50,000
 * Each element value is an integer between -1,000,000,000 - 1,000,000,000
-* The majority element is one that appears more than (N / 2) times
 * There will always be a majority element 
 
 # Plan

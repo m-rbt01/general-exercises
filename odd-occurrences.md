@@ -17,6 +17,7 @@ Given an array A of N integers, each element value can be paired with another el
 
 # Algorithm
 ```js
+FUNCTION: getOddOccurrenceElem(A)
 SET result to zero
 FOREACH through the array
     SET result to itself BITWISE the current item

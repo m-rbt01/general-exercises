@@ -17,7 +17,7 @@ Answer: 0 //empty <-> empty
 
 # Algorithm
 ```js
-FUNCTION: getSymmetryPoint(S)
+FUNCTION: getStrSymmetryPoint(S)
 IF s length EQUALS 0 OR is even THEN
     return -1
 ENDIF

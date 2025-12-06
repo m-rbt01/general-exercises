@@ -11,6 +11,7 @@ Given an array A of N integers, return the number of distinct values in A.
 
 # Algorithm
 ```js
+FUNCTION: getDistinctCount(A)
 DECLARE empty set
 FOREACH through the array
     ADD current item to set

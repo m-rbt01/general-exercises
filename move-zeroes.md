@@ -18,7 +18,7 @@ Answer: [0]
 * **Process** - _get array A > find zeroes > shift to the right > move non-zeroes to left > return shifted array_
 
 # Algorithm
-**NOTES**: The **Two-Pointer algorithm** is used to solve problems involving linear data structures (_e.g arrays_), by using two pointers (e.g. _left/right or read/write_). The pointers help traverse the data structure to find pairs, subarrays, or other elements that satisfy a given condition. This is useful to process two elements per loop iteration.
+**NOTES**: The **Two-Pointer algorithm** is used to solve problems involving linear data structures (_e.g arrays_), by using two pointers (_e.g. left/right or read/write_) to traverse the data structure. Commonly used to find pairs, subarrays, or other elements that satisfy a given condition. Helps process two elements per loop iteration. **Focuses on the elements themselves**. The following solution uses two-pointer algorithm to traverse through array and move non-zero elements to the beginning of the array, write index maintains the leftmost position to swap elements.
 ```js
 FUNCTION getNonZeroArray(A)
 SET write to 0
