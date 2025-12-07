@@ -390,3 +390,15 @@ function getSubarrayProdCount(A, K){
     }
     return count;
 }
+
+function getMinRemovedIntervalsCount(A){
+    //sort intervals in ascending order based on their end values (ensures adjacent overlapped ends for minimal removal)
+    A.sort((currInterval, nextInterval) => currInterval[1] - nextInterval[1]);
+    let count = 0;
+    let lastEnd = A[0][1]; //start with the end of first interval
+    for(let i = 1; i < A.length; i++){ //begin comparison at second interval
+        if(A[i][0] < lastEnd) ++count; //removal needed when current end is smaller than previous end
+        else lastEnd = A[i][1]; //update new end for next comparison
+    }
+    return count;
+}
