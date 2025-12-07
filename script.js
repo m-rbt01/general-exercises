@@ -428,7 +428,7 @@ function getMinRemovedIntervalsCount(A){
 }
 
 function getMergedIntervalsArray(A){
-    //sort intervals in ascending order based on their start values (earliest starts minimizes overlapped intervals by keeping earliest starts in order)
+    //sort intervals in ascending order based on their start values (earliest starts minimizes overlapped intervals by keeping starts in order)
     A.sort((currentInterval, nextInterval) => currentInterval[0] - nextInterval[0]);
     const mergedArray = [[A[0][0], A[0][1]]]; //begin with first interval
     let write = 0; //current comparison interval
@@ -444,4 +444,13 @@ function getMergedIntervalsArray(A){
         }
     }
     return mergedArray;
+}
+
+function checkCanAttendAllMeetings(A){
+    //sort intervals in ascending order based on their start values (earliest starts minimizes overlapped meetings by keeping start times in order)
+    A.sort((currentInterval, nextInterval) => currentInterval[0] - nextInterval[0]);
+    for(let i = 1; i < A.length; i++){
+        if(A[i][0] < A[i - 1][1]) return false; //once an overlap is encountered, not all meetings can be attended
+    }
+    return true;
 }
