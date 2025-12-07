@@ -392,7 +392,7 @@ function getSubarrayProdCount(A, K){
 }
 
 function getMinRemovedIntervalsCount(A){
-    //sort intervals in ascending order based on their end values (ensures adjacent overlapped ends for minimal removal)
+    //sort intervals in ascending order based on their end values (earliest ends maximizes room for keeping future intervals)
     A.sort((currInterval, nextInterval) => currInterval[1] - nextInterval[1]);
     let count = 0;
     let lastEnd = A[0][1]; //start with the end of first interval
@@ -401,4 +401,23 @@ function getMinRemovedIntervalsCount(A){
         else lastEnd = A[i][1]; //update new end for next comparison
     }
     return count;
+}
+
+function getMergedIntervalsArray(A){
+    //sort intervals in ascending order based on their start values (earliest starts minimizes overlapped intervals by keeping earliest starts in order)
+    A.sort((currentInterval, nextInterval) => currentInterval[0] - nextInterval[0]);
+    const mergedArray = [[A[0][0], A[0][1]]]; //begin with first interval
+    let write = 0; //current comparison interval
+    for(let read = 1; read < A.length; read++){
+        if(A[read][0] <= mergedArray[write][1]){ //if overlapped 
+            let smallestStart = Math.min(A[read][0], mergedArray[write][0]); //find smallest start between current interval and previous merged
+            let greatestEnd = Math.max(A[read][1], mergedArray[write][1]);  //find greatest end between current interval and previous merge
+            mergedArray[write] = [smallestStart, greatestEnd]; //update previous merge with new interval range
+        }
+        else{
+            mergedArray.push([A[read][0], A[read][1]]); //set interval to merged array
+            ++write; //move write index upwards
+        }
+    }
+    return mergedArray;
 }
