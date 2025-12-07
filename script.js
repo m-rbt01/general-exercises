@@ -21,11 +21,35 @@ function getRotatedArray(A, K){
 }
 
 function getMaxProductOfThree(A){
+    /*Functional solution with O(N log N) time complexity, fine for interviews BUT not the best for large arrays
     A.sort((a, b) => a - b); //sort array in ascending order
     let N = A.length;
     let lowEnd = A[0] * A[1] * A[N - 1]; //potential negatives/largest element product option
     let highEnd = A[N - 1] * A[N - 2] * A[N - 3]; //largest element product option
-    return Math.max(lowEnd, highEnd); //return the larger product 
+    return Math.max(lowEnd, highEnd); //return the larger product*/
+
+    //Optimal solution with O(N) time complexity, no sorting the entire array, track 3 maximums and 2 minimums
+    let maxOne = -Infinity, maxTwo = -Infinity, maxThree = -Infinity; //initial comparison for greater number
+    let minOne = Infinity, minTwo = Infinity; //initial comparison for smaller number
+    for(const num of A){
+        if(num > maxOne){ //update new maximums
+            maxThree = maxTwo;
+            maxTwo = maxOne;
+            maxOne = num;
+        }
+        else if(num > maxTwo){ //or update secondary maximums
+            maxThree = maxTwo;
+            maxTwo = num;
+        }
+        else if(num > maxThree) maxThree = num; // or update final maximum
+
+        if(num < minOne){ //update new minimums
+            minTwo = minOne;
+            minOne = num;
+        }
+        else if(num < minTwo) minTwo = num; //or update final minimum
+    }
+    return Math.max(minOne * minTwo * maxOne, maxOne * maxTwo * maxThree); //return the greater product of the two options (negatives * largest OR largest * each other)
 }
 
 function getOddOccurrenceElem(A){
