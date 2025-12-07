@@ -50,7 +50,7 @@ Sorting + Greedy:
 - [x] Non-overlapping Intervals
 - [x] Merge Intervals
 - [x] Maximum Product of Three
-- [ ] Meeting Rooms
+- [x] Meeting Rooms
 - [ ] Assign Cookies
 - [ ] Minimum Number of Arrows to Burst Balloons
 
