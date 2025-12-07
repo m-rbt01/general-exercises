@@ -48,7 +48,7 @@ Goal: Recognizing structural patterns that point to optimal O(N log N) or O(N) s
 ### Problem Sets
 Sorting + Greedy:
 - [x] Non-overlapping Intervals
-- [ ] Merge Intervals
+- [x] Merge Intervals
 - [ ] Maximum Product of Three
 - [ ] Meeting Rooms
 - [ ] Assign Cookies
