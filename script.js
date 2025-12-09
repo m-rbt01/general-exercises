@@ -454,3 +454,33 @@ function checkCanAttendAllMeetings(A){
     }
     return true;
 }
+
+function getCharReplacementsArray(A){
+    const replacements = new Array(A.length); //replacement count for each word in A
+    for(let word = 0; word < A.length; word++){
+        let count = 0;
+        let previousChar = A[word][0];
+        for(let char = 1; char < A[word].length; char++){
+            if(A[word][char] === previousChar){ //when adjacent duplicate encountered
+                ++count; //one replacement needed
+                previousChar = '#'; //dummy replacement character for future comparison
+            }
+            else previousChar = A[word][char]; //otherwise, update previous character for future comparison
+        }
+        replacements[word] = count; //set total count for the given word
+    }
+    return replacements;
+}
+
+function getMaxAlphaSubstring(S){
+    let maxAlphaSubstr = '';
+    let maxAlphaChar = S[0]; //first char is initial maximum alphabetical char
+    for(let i = 0; i < S.length; i++){
+        if(S[i] >= maxAlphaChar){ //when an lexicographically greater or equal character is encountered
+            maxAlphaChar = S[i]; //update new maximum alphabetical char
+            let currentSubstr = S.substring(i); //get substring from (i...end)
+            if(currentSubstr > maxAlphaSubstr) maxAlphaSubstr = currentSubstr; //determine the lexicographically larger substring
+        }
+    }
+    return maxAlphaSubstr;
+}
