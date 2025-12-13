@@ -51,7 +51,7 @@ Sorting + Greedy:
 - [x] Merge Intervals
 - [x] Maximum Product of Three
 - [x] Meeting Rooms
-- [ ] Assign Cookies
+- [x] Assign Cookies
 - [ ] Minimum Number of Arrows to Burst Balloons
 
 Stacks:
