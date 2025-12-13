@@ -484,3 +484,20 @@ function getMaxAlphaSubstring(S){
     }
     return maxAlphaSubstr;
 }
+
+function getMaxNumChildren(A, S){
+    //Sort child greed levels and cookie sizes in ascending order: least greedy child gets the smallest possible cookie
+    A.sort((currentGreed, nextGreed) => currentGreed - nextGreed);
+    S.sort((currentSize, nextSize) => currentSize - nextSize);
+    let satisfiedCount = 0;
+    let childIndex = 0;
+    let cookieIndex = 0;
+    while(childIndex < A.length && cookieIndex < S.length){
+        if(S[cookieIndex] >= A[childIndex]){ //when the smallest possible cookie satisfies a given child
+            ++satisfiedCount; //increment count
+            ++childIndex; //move on to the next child
+        }
+        ++cookieIndex; //move on to the next cookie
+    }
+    return satisfiedCount;
+}
