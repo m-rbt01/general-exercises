@@ -501,3 +501,17 @@ function getMaxNumChildren(A, S){
     }
     return satisfiedCount;
 }
+
+function getMinNumOfArrows(A){
+    //Sort balloons in ascending order based on end values: ensures smallest end diameter shot reaches as many balloons nearest to it
+    A.sort((currentBalloon, nextBalloon) => currentBalloon[1] - nextBalloon[1]);
+    let arrowsCount = 1; //always begin with one shot for first balloon
+    let previousBalloonEnd = A[0][1];
+    for(let currentBalloon = 1; currentBalloon < A.length; currentBalloon++){
+        if(A[currentBalloon][0] > previousBalloonEnd){ //if smallest balloon end so far IS NOT WITHIN RANGE of current balloon diameter
+            ++arrowsCount; //shoot a new arrow for current balloon
+            previousBalloonEnd = A[currentBalloon][1]; //move smallest balloon to current balloon
+        }
+    }
+    return arrowsCount;
+}
