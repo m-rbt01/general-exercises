@@ -57,7 +57,7 @@ Sorting + Greedy:
 Stacks:
 - [X] Valid Parentheses/Brackets
 - [x] Min Stack
-- [ ] Daily Temperatures
+- [x] Daily Temperatures
 - [ ] Stone Wall (Codility)
 
 Queues / Deque:
