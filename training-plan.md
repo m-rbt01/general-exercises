@@ -55,7 +55,7 @@ Sorting + Greedy:
 - [x] Minimum Number of Arrows to Burst Balloons
 
 Stacks:
-- [ ] Valid Parentheses
+- [X] Valid Parentheses/Brackets
 - [ ] Min Stack
 - [ ] Daily Temperatures
 - [ ] Stone Wall (Codility)
