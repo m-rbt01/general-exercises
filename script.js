@@ -107,19 +107,18 @@ function getFirstUniqueElem(A){
 }
 
 function checkIsProperlyNested(S){
-    const BRACKETS = { //matching pairs for brackets 
-        '(': ')',
-        '{': '}',
-        '[': ']'
-    };
+    //matching pairs for brackets 
+    const BRACKETS = new Map([ 
+        ['(', ')'],
+        ['{', '}'],
+        ['[', ']']
+    ]);
     const openingBrackets = []; //holds encountered opening brackets
-    for(let c = 0; c < S.length; c++){
-        if(S[c] in BRACKETS) openingBrackets.push(S[c]); //most inner opening at end of array
-        else if(BRACKETS[openingBrackets.pop()] !== S[c]){ //if popped opening bracket's matching pair doesn't match current closing bracket
-            return 0; //not properly nested
-        }
+    for(const bracket of S){
+        if(BRACKETS.has(bracket)) openingBrackets.push(bracket); //most inner opening at end of stack (LIFO)
+        else if((openingBrackets.length === 0) || (BRACKETS.get(openingBrackets.pop()) !== bracket)) return false; //if no openings encountered OR most inner opening bracket DOES NOT MATCH current closing bracket
     }
-    return (openingBrackets.length === 0) ? 1 : 0; //return 1 only if all opening brackets were closed out
+    return (openingBrackets.length === 0) ? true : false; //return true only if all opening brackets were closed out
 }
 
 function getStrSymmetryPoint(S){
