@@ -538,3 +538,17 @@ function Stack(){
         return this.smallStack[this.smallStack.length - 1];
     };
 }
+
+function getWarmerDaysArray(A){
+    const days = new Array(A.length).fill(0); //holds the number of days after A[i] to get a warmer temperature, initial state for days is 0 
+    const unresolvedDays = new Array(); //holds indices of unresolved day temperatures
+    for(let i = 0; i < A.length; i++){
+        //while there are unresolved days present AND current temperature is warmer than the most recent unresolved day temperature
+        while(unresolvedDays.length > 0 && A[i] > A[unresolvedDays[unresolvedDays.length - 1]]){
+            let topUnresolved = unresolvedDays.pop(); //remove the most recent unresolved day index
+            days[topUnresolved] = i - topUnresolved; //set days at most recent unresolved index to the number of days until current warmest temperature
+        }
+        unresolvedDays.push(i); //track indices of unresolved days
+    }
+    return days;
+}
