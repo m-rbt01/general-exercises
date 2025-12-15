@@ -52,7 +52,7 @@ Sorting + Greedy:
 - [x] Maximum Product of Three
 - [x] Meeting Rooms
 - [x] Assign Cookies
-- [ ] Minimum Number of Arrows to Burst Balloons
+- [x] Minimum Number of Arrows to Burst Balloons
 
 Stacks:
 - [ ] Valid Parentheses
