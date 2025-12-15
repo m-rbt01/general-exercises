@@ -514,3 +514,27 @@ function getMinNumOfArrows(A){
     }
     return arrowsCount;
 }
+
+function Stack(){
+    //Initial state
+    this.mainStack = new Array(); //tracks all elements
+    this.smallStack = new Array(); //tracks history of smallest elements in sequential order
+
+    //Member functions
+    this.push = function(num){
+        this.mainStack.push(num); //insert new element
+        //update smallest elements when main stack is empty or new num is the smallest so far
+        if(this.smallStack.length === 0 || num <= this.smallStack[this.smallStack.length - 1]) this.smallStack.push(num);
+    };
+    this.pop = function(){
+        let topElem = this.mainStack.pop();
+        if(topElem === this.smallStack[this.smallStack.length - 1]) this.smallStack.pop(); //pop smallest element from its stack if needed
+        return topElem;
+    };
+    this.top = function(){
+        return this.mainStack[this.mainStack.length - 1];
+    };
+    this.getMinElem = function(){
+        return this.smallStack[this.smallStack.length - 1];
+    };
+}
