@@ -58,7 +58,7 @@ Stacks:
 - [X] Valid Parentheses/Brackets
 - [x] Min Stack
 - [x] Daily Temperatures
-- [ ] Stone Wall (Codility)
+- [x] Stone Wall (Codility)
 
 Queues / Deque:
 - [ ] Sliding Window Maximum
