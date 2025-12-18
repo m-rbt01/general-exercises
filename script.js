@@ -165,16 +165,16 @@ function getCompressedStrLength(A){
 }
 
 function getMinBlockCount(H){
-    const blocks = []; //represents reusable active blocks for height requirements
-    let count = 0;
-    H.forEach((height) => {
-        while(blocks[blocks.length - 1] > height) blocks.pop(); //can't reuse active block for current smaller height requirement
-        if(blocks.length === 0 || blocks[blocks.length - 1] < height){ //if no active block exists OR active block is smaller than current height requirement
-            blocks.push(height); //add new active block of current height
-            ++count; //increment number of blocks needed
+    const activeBlocks = []; //represents reusable active blocks for height requirements
+    let blockCount = 0;
+    for(const currentHeight of H){
+        while(activeBlocks.length > 0 && activeBlocks[activeBlocks.length - 1] > currentHeight) activeBlocks.pop(); //can't reuse active block for current smaller height requirement
+        if(activeBlocks.length === 0 || activeBlocks[activeBlocks.length - 1] < height){ //if no active block exists OR active block is smaller than current height requirement
+            activeBlocks.push(currentHeight); //add new active block of current height
+            ++blockCount; //increment number of blocks needed
         }
-    });
-    return count;
+    }
+    return blockCount;
 }
 
 function getPassingCarsCount(A){
