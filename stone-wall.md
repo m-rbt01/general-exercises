@@ -25,10 +25,10 @@ FUNCTION: getMinBlockCount(H)
 DECLARE blocks array
 DECLARE count
 FOREACH height in H
-    WHILE end IS GREATER THAN height THEN
-        POP end from blocks
+    WHILE top IS GREATER THAN height THEN
+        POP top from blocks
     ENDWHILE
-    IF blocks IS EMPTY OR end IS LESS THAN height THEN
+    IF blocks IS EMPTY OR top IS LESS THAN height THEN
         PUSH height to blocks
         INCREMENT count
     ENDIF
