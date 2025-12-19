@@ -62,7 +62,7 @@ Stacks:
 
 Queues / Deque:
 - [x] Sliding Window Maximum
-- [ ] Recent Counter
+- [x] Number of Recent Calls
 
 ## Week 3 - Advanced: Trees, Graphs, Heaps
 Goal: Build intuition around hierarchical structures and optimal retrieval (heap).
