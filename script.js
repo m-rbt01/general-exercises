@@ -566,4 +566,15 @@ function getMaxSlidingWindow(A, W){
     return maxSlidingWindow;
 }
 
-
+function RecentCounter(){
+    //Member properties
+    this.requests = []; //holds all call requests: monotonic increasing queue
+    this.timeFrame = 3000; //represents maximum timeframe for recent calls
+    this.head = 0; //represents the head index of the oldest call within a given recent timeframe
+    //Member functions
+    this.ping = function(T){
+        this.requests.push(T); //add new request 
+        while(this.head < this.requests.length && this.requests[this.head] < (T - this.timeFrame)) this.head++; //move the head down the end until within the acceptable range
+        return this.requests.length - this.head; //difference represents the number of requests
+    };
+}
