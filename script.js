@@ -552,3 +552,18 @@ function getWarmerDaysArray(A){
     }
     return days;
 }
+
+function getMaxSlidingWindow(A, W){
+    const maxSlidingWindow = []; //max nums of sliding window array
+    const maxIndices = []; //indices monotonic decreasing deque
+    let head = 0; //head of max indices
+    for(let right = 0; right < A.length; right++){
+        if(head < maxIndices.length && maxIndices[head] < right - W + 1) ++head; //remove max number outside current window by moving head upwards
+        while(maxIndices.length > head && A[right] >= A[maxIndices[maxIndices.length - 1]]) maxIndices.pop(); //remove smaller elements from deque to maintain decreasing order (max is always at head)
+        maxIndices.push(right);
+        if(right >= W - 1) maxSlidingWindow.push(A[maxIndices[head]]); //update max sliding window with current window maximum 
+    }
+    return maxSlidingWindow;
+}
+
+
