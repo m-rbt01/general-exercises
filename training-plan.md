@@ -61,7 +61,7 @@ Stacks:
 - [x] Stone Wall (Codility)
 
 Queues / Deque:
-- [ ] Sliding Window Maximum
+- [x] Sliding Window Maximum
 - [ ] Recent Counter
 
 ## Week 3 - Advanced: Trees, Graphs, Heaps
