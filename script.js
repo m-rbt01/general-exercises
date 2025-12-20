@@ -578,3 +578,21 @@ function RecentCounter(){
         return this.requests.length - this.head; //difference represents the number of requests
     };
 }
+
+class TreeNode{
+    constructor(value = 0, left = null, right = null){
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+function invertTree(root){
+    if(root === null) return null; //reached end of branch, no further children
+    invertTree(root.left); //recursive call all left children
+    invertTree(root.right); //recursive call all right children
+    [root.left, root.right] = [root.right, root.left]; //swap the most inner children
+    return root; //return the updated node
+}
+
+
