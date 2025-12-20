@@ -75,7 +75,7 @@ Goal: Build intuition around hierarchical structures and optimal retrieval (heap
 
 ### Problem Sets
 Trees (DFS & BFS):
-- [ ] Invert Binary Tree
+- [x] Invert Binary Tree
 - [ ] Maximum Depth
 - [ ] Balanced Binary Tree
 - [ ] Binary Tree Level Order Traversal
