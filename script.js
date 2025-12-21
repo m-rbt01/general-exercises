@@ -595,4 +595,10 @@ function invertTree(root){
     return root; //return the updated node
 }
 
+function getMaxTreeDepth(root){
+    if(root === null) return 0; //empty subtree has depth of 0
+    let leftDepth = getMaxTreeDepth(root.left); //recursively track max left subtrees
+    let rightDepth = getMaxTreeDepth(root.right); //recursively track max right subtrees
+    return Math.max(leftDepth, rightDepth) + 1; //return the max subtree count plus current node
+}
 
