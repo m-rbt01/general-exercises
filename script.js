@@ -602,3 +602,18 @@ function getMaxTreeDepth(root){
     return Math.max(leftDepth, rightDepth) + 1; //return the max subtree count plus current node
 }
 
+function getTreeHeight(root){
+    if(root === null) return 0; //empty subtree has height of 0
+    //recursively track max height of left subtrees
+    let leftHeight = getTreeHeight(root.left); 
+    if(leftHeight === -1) return -1; //encountered imbalanced height on left subtrees
+    //recursively track max height of right subtrees
+    let rightHeight = getTreeHeight(root.right);
+    if(rightHeight === -1) return -1; //encountered imbalanced height on right subtrees
+    //indicate a given node's height is imbalanced or return max subtree height plus current node
+    if(Math.abs(leftHeight - rightHeight) > 1) return -1; 
+    return Math.max(leftHeight, rightHeight) + 1; 
+}
+function checkIsTreeBalanced(root){
+    return getTreeHeight(root) !== -1; //initial getTreeHeight() call gets balanced height or -1 indicating imbalanced height
+}
