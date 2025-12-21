@@ -617,3 +617,20 @@ function getTreeHeight(root){
 function checkIsTreeBalanced(root){
     return getTreeHeight(root) !== -1; //initial getTreeHeight() call gets balanced height or -1 indicating imbalanced height
 }
+
+function getStartingGasStation(gas, cost){
+    let startingStation = 0; //initially first element index
+    let gasTank = 0; //begin with an empty tank
+    let totalGas = 0; //holds accumulated total gas across all stations
+    let totalCost = 0; //holds accumulated total cost across all stations
+    for(let i = 0; i < gas.length; i++){ //scan gas stations and cost only once
+        totalGas += gas[i]; //accumulate running gas 
+        totalCost += cost[i]; //accumulate running cost
+        gasTank += gas[i] - cost[i]; //accumulate gas tank moving from current station to the next
+        if(gasTank < 0){ //when a given station cannot move you to the next gas station
+            startingStation = i + 1; //reset the starting position to the next station
+            gasTank = 0; //reset your tank to an initial empty state
+        }
+    }
+    return (totalCost > totalGas) ? -1 : startingStation; //when to total gas does not match the traveling cost, return -1 OR the successful starting index
+}
