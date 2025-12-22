@@ -691,11 +691,7 @@ class Queue{
         if(this.isEmpty()) return undefined; //stop dequeue attempt if queue is empty
         const item = this.#items.get(this.#head);
         this.#items.delete(this.#head); //remove first item in queue
-        if(this.isEmpty()){ //if queue is empty: reset head and tail position
-            this.#head = 0;
-            this.#tail = 0;
-        }
-        else this.#head++; //otherwise: update the head position
+        this.#head++; //update the head position
         return item; //return the removed item
     }
     front(){
