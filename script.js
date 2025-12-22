@@ -1,3 +1,4 @@
+//--------------SOLUTIONS-------------------
 function getDistinctCount(A){
     const uniqueValues = new Set();
     A.forEach((item) => uniqueValues.add(item)); //record unique numbers
@@ -579,14 +580,6 @@ function RecentCounter(){
     };
 }
 
-class TreeNode{
-    constructor(value = 0, left = null, right = null){
-        this.value = value;
-        this.left = left;
-        this.right = right;
-    }
-}
-
 function invertTree(root){
     if(root === null) return null; //reached end of branch, no further children
     invertTree(root.left); //recursive call all left children
@@ -633,4 +626,88 @@ function getStartingGasStation(gas, cost){
         }
     }
     return (totalCost > totalGas) ? -1 : startingStation; //when to total gas does not match the traveling cost, return -1 OR the successful starting index
+}
+
+function getLevelOrderValues(root){
+    //Optimal BFS pre-order traversal solution
+    if(root === null) return [];
+    const levelOrderValues = []; //holds subarrays of level order node values
+    const nodeQueue = [root]; //holds queue for first levels to traverse
+    let head = 0; //head node of the queue
+    while(head < nodeQueue.length){
+        const currentLevel = [];
+        const levelSize = nodeQueue.length - head; //fix size of current queue nodes
+        for(let i = 0; i < levelSize; i++){ //for each node in the fixed current level size
+            const currentNode = nodeQueue[head++]; //dequeue first node in queue
+            currentLevel.push(currentNode.value); //push current node value to the current level of nodes
+            if(currentNode.left !== null) nodeQueue.push(currentNode.left); //if there is a left subtree, add it to the queue
+            if(currentNode.right !== null) nodeQueue.push(currentNode.right); //if there is a right subtree, add it to the queue
+        }
+        levelOrderValues.push(currentLevel); //push current level values to array
+    }
+
+    /*Same Solution but with custom Queue implementation: overcomplicated to implement queue during timed coding assessments
+    const nodeQueue = new Queue();
+    nodeQueue.enqueue(root);
+    while(!nodeQueue.isEmpty()){
+        const currentLevel = [];
+        const size = nodeQueue.size();
+        for(let i = 0; i < size; i++){
+            const currentNode = nodeQueue.dequeue();
+            currentLevel.push(currentNode.value);
+            if(currentNode.left !== null) nodeQueue.enqueue(currentNode.left);
+            if(currentNode.right !== null) nodeQueue.enqueue(currentNode.right);
+        }
+        levelOrderValues.push(currentLevel);
+    }*/
+    return levelOrderValues;
+}
+
+//-----------------CLASSES-----------------------
+class TreeNode{
+    constructor(value = 0, left = null, right = null){
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+class Queue{
+    //Private properties
+    #items;
+    #head;
+    #tail;
+    constructor(){
+        this.#items = new Map(); //Map object organization of queue items
+        this.#head = 0; //head key for first item
+        this.#tail = 0; //tail key for last item
+    }
+    enqueue(item){
+        if(item === undefined) return undefined;
+        this.#items.set(this.#tail, item); //add new item to the back of queue
+        this.#tail++; //update the tail position
+    }
+    dequeue(){
+        if(this.isEmpty()) return undefined; //stop dequeue attempt if queue is empty
+        const item = this.#items.get(this.#head);
+        this.#items.delete(this.#head); //remove first item in queue
+        if(this.isEmpty()){ //if queue is empty: reset head and tail position
+            this.#head = 0;
+            this.#tail = 0;
+        }
+        else this.#head++; //otherwise: update the head position
+        return item; //return the removed item
+    }
+    front(){
+        return (this.isEmpty()) ? undefined : this.#items.get(this.#head); //return first item without removing it
+    }
+    rear(){
+        return (this.isEmpty()) ? undefined : this.#items.get(this.#tail - 1); //return last item without removing it
+    }
+    isEmpty(){
+        return this.#items.size === 0;
+    }
+    size(){
+        return this.#items.size;
+    }
 }
