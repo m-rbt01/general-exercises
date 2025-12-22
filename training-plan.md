@@ -79,7 +79,7 @@ Trees (DFS & BFS):
 - [x] Invert Binary Tree
 - [x] Maximum Depth
 - [x] Balanced Binary Tree
-- [ ] Binary Tree Level Order Traversal
+- [x] Binary Tree Level Order Traversal
 - [ ] Lowest Common Ancestor
 
 Graphs:
