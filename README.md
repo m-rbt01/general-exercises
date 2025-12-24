@@ -6,6 +6,7 @@ This project is intended to provide common interview coding problems that test f
 * The training plan file outlines weekly problem sets that focus on algorithms and data structures.
 * Markdown files named by coding problems contain the solution plan for its problem.
 * Solutions are included in the script file and are implemented as functions.
+* Study plans outline coding problems to practice designed for specific employer assessments.
 
 ## Contact
 Christian Donjuan - [LinkedIn](https://www.linkedin.com/in/christian-donjuan/) - chdonjuan.1@gmail.com
