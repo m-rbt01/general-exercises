@@ -5,7 +5,7 @@
 * Focus on speed, clarity, and correctness.
 
 **Practice:**
-* [ ] Reverse a string
+* [x] Reverse string
 * [ ] FizzBuzz (add variations)
 * [ ] Find max/min in an array
 * [ ] Check if a string is a palindrome
