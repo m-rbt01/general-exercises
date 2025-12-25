@@ -663,6 +663,16 @@ function getLevelOrderValues(root){
     return levelOrderValues;
 }
 
+function getReverseString(s){
+    for(let left = 0, right = s.length - 1; left < right; left++, right--){ //iterate until left meets with right
+        //temp variable is slightly faster for large input arrays than using destructuring swap syntax (i.e. [a, b] = [b, a])
+        let temp = s[left]; //temporarily store left character
+        s[left] = s[right]; //set left to right character
+        s[right] = temp; //set right to temp left character
+    }
+    return s;
+}
+
 //-----------------CLASSES-----------------------
 class TreeNode{
     constructor(value = 0, left = null, right = null){
