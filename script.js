@@ -663,14 +663,27 @@ function getLevelOrderValues(root){
     return levelOrderValues;
 }
 
-function getReverseString(s){
-    for(let left = 0, right = s.length - 1; left < right; left++, right--){ //iterate until left meets with right
+function getReverseString(S){
+    for(let left = 0, right = S.length - 1; left < right; left++, right--){ //iterate until left meets with right
         //temp variable is slightly faster for large input arrays than using destructuring swap syntax (i.e. [a, b] = [b, a])
-        let temp = s[left]; //temporarily store left character
-        s[left] = s[right]; //set left to right character
-        s[right] = temp; //set right to temp left character
+        let temp = S[left]; //temporarily store left character
+        S[left] = S[right]; //set left to right character
+        S[right] = temp; //set right to temp left character
     }
-    return s;
+    return S; //return reversed string array
+}
+
+function getFizzBuzzArray(N){
+    const FIZZ = "Fizz";
+    const BUZZ = "Buzz";
+    const result = new Array(N); //holds fizz buzz of each number from 1...N
+    for(let i = 1; i <= N; i++){
+        let str = ''; //initial state
+        if(i % 3 === 0) str += FIZZ; //add fizz for divisible by 3
+        if(i % 5 === 0) str += BUZZ; //add buzz for divisible by 5
+        result[i - 1] = str || `${i}`; //set current result to evaluated string or current num 
+    }
+    return result; 
 }
 
 //-----------------CLASSES-----------------------
