@@ -6,7 +6,7 @@
 
 **Practice:**
 * [x] Reverse string
-* [x] FizzBuzz (with variations)
+* [x] Dynamic FizzBuzz
 * [ ] Find max/min in an array
 * [ ] Check if a string is a palindrome
 
