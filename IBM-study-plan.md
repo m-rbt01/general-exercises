@@ -7,7 +7,7 @@
 **Practice:**
 * [x] Reverse string
 * [x] Dynamic FizzBuzz
-* [ ] Find max/min in an array
+* [x] Removing Minimum and Maximum From Array
 * [ ] Check if a string is a palindrome
 
 **Platforms:**
