@@ -685,6 +685,28 @@ function getDynamicFizzBuzz(num, rules){
     return result; 
 }
 
+function getMinDeletions(nums){
+    if(nums.length === 1) return 1;
+    let min = Infinity; //compare min value
+    let max = -Infinity; //compare max value
+    let minPosition = -1; //holds min num position
+    let maxPosition = -1; //holds max num position
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] < min){ //update for smallest number encountered
+            min = nums[i];
+            minPosition = i;
+        }
+        if(nums[i] > max){ //update for greatest number encountered
+            max = nums[i];
+            maxPosition = i;
+        }
+    }
+    let leftOption = Math.max(minPosition, maxPosition) + 1; //delete min and max from left end
+    let rightOption = nums.length - Math.min(minPosition, maxPosition); //delete min and max from right end
+    let splitOption = Math.min(minPosition + 1, nums.length - minPosition) + Math.min(maxPosition + 1, nums.length - maxPosition); //delete min and max from split ends
+    return Math.min(leftOption, rightOption, splitOption); //return the minimum number of deletions
+}
+
 //-----------------CLASSES-----------------------
 class TreeNode{
     constructor(value = 0, left = null, right = null){
