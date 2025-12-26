@@ -8,7 +8,7 @@
 * [x] Reverse string
 * [x] Dynamic FizzBuzz
 * [x] Removing Minimum and Maximum From Array
-* [ ] Check if a string is a palindrome
+* [x] Valid Palindrome
 
 **Platforms:**
 * LeetCode (Easy)
