@@ -673,14 +673,13 @@ function getReverseString(S){
     return S; //return reversed string array
 }
 
-function getFizzBuzzArray(N){
-    const FIZZ = "Fizz";
-    const BUZZ = "Buzz";
-    const result = new Array(N); //holds fizz buzz of each number from 1...N
-    for(let i = 1; i <= N; i++){
+function getDynamicFizzBuzz(num, rules){
+    const result = new Array(num); //holds fizz buzz of each number from 1...num
+    for(let i = 1; i <= num; i++){
         let str = ''; //initial state
-        if(i % 3 === 0) str += FIZZ; //add fizz for divisible by 3
-        if(i % 5 === 0) str += BUZZ; //add buzz for divisible by 5
+        for(const [divisor, word] of rules){ //evaluate each rule
+            if(i % divisor === 0) str += word; //accumulate words if current num is divisible by divisor
+        }
         result[i - 1] = str || `${i}`; //set current result to evaluated string or current num 
     }
     return result; 
