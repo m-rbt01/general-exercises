@@ -707,6 +707,37 @@ function getMinDeletions(nums){
     return Math.min(leftOption, rightOption, splitOption); //return the minimum number of deletions
 }
 
+function checkIsAlphanumeric(C){
+    //Alphanumeric ASCII code ranges
+    const ZERO = 48;
+    const NINE = 57;
+    const UPPER_A = 65;
+    const UPPER_Z = 90;
+    const LOWER_A = 97;
+    const LOWER_Z = 122;
+    //ASCII code of C
+    const charCode = C.charCodeAt(0);
+    //determine if alphanumeric
+    return (
+        (charCode >= ZERO && charCode <= NINE) || //0-9
+        (charCode >= UPPER_A && charCode <= UPPER_Z) || //A-Z
+        (charCode >= LOWER_A && charCode <= LOWER_Z) //a-z
+    );
+}
+
+function checkIsValidPalindrome(S){
+    let left = 0; //left pointer starts at first element
+    let right = S.length - 1; //right pointer starts at last element
+    while(left < right){ //iterate through characters until left and right meet
+        while(left < right && !checkIsAlphanumeric(S[left])) ++left; //move left up until an alphanumeric character is found
+        while(left < right && !checkIsAlphanumeric(S[right])) --right; //move right down until an alphanumeric character is found
+        if(S[left].toLowerCase() !== S[right].toLowerCase()) return false; //S is NOT a valid palindrome
+        ++left; //move left up
+        --right; //move right down
+    }
+    return true; //S is a valid palindrome 
+}
+
 //-----------------CLASSES-----------------------
 class TreeNode{
     constructor(value = 0, left = null, right = null){
