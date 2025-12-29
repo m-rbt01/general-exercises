@@ -747,6 +747,26 @@ function getSpikePosition(measurements){
     return -1; //no spike found
 }
 
+function getMinBatchSize(dataSamples, maxBatches){
+    let highSize = dataSamples[0]; //initial maximum batch size possible: -Infinity for sample comparison
+    let lowSize = 1; //initial minimum batch size possible
+    for(let i = 1; i < dataSamples.length; i++){ //find max sample in dataSamples
+        if(dataSamples[i] > highSize) highSize = dataSamples[i];
+    }
+    while(lowSize < highSize){ //binary search for the minimum batch size 
+        let middleSize = Math.floor((lowSize + highSize) / 2); //middle batch size within min...max
+        let totalBatches = 0;
+        for(const sample of dataSamples){ //accumulate total batches with current batch size
+            totalBatches += Math.floor((sample + middleSize - 1) / middleSize);
+        }
+        if(totalBatches <= maxBatches){
+            highSize = middleSize; //acceptable batch size, shrink range: move high size to the middle for possible smaller batch size
+        }
+        else lowSize = middleSize + 1; //batch size exceeds limit, update range: move low size in front of the middle for possible greater batch size
+    }
+    return lowSize;
+}
+
 //-----------------CLASSES-----------------------
 class TreeNode{
     constructor(value = 0, left = null, right = null){
