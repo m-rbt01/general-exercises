@@ -738,6 +738,15 @@ function checkIsValidPalindrome(S){
     return true; //S is a valid palindrome 
 }
 
+function getSpikePosition(measurements){
+    let max = measurements[0]; //initial max number is first element
+    for(let i = 1; i < measurements.length; i++){ //iterate through each measurement
+        if(measurements[i] >= max * 3) return i; //return position if spike is encountered
+        if(measurements[i] > max) max = measurements[i]; //otherwise, update the maximum so far
+    }
+    return -1; //no spike found
+}
+
 //-----------------CLASSES-----------------------
 class TreeNode{
     constructor(value = 0, left = null, right = null){
