@@ -5,16 +5,16 @@ A 3 day plan of coding problems focused on medium-difficulty, arrays/data-struct
 Goal: Become very comfortable explaining why hash maps, two pointers, and prefix sums work.
 
 ### Problems
-* [ ] **Two Sum**  
+* [x] **Two Sum**  
 LC-1  
 Why: Hash map reasoning, trade-offs vs brute force
-* [ ] **Contains Duplicate**  
+* [x] **Contains Duplicate**  
 LC-217  
 Why: Set vs sorting
-* [ ] **Product of Array Except Self**  
+* [x] **Product of Array Except Self**  
 LC-238  
 Why: Prefix/suffix logic
-* [ ] **Maximum Subarray (Kadane’s Algorithm)**  
+* [x] **Maximum Subarray (Kadane’s Algorithm)**  
 LC-53  
 Why: Dynamic thinking
 * [ ] **Subarray Sum Equals K**  
