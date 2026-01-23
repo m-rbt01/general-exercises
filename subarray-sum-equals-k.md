@@ -30,7 +30,7 @@ FOR nums in A
     IF current sum minus K IS IN prefix sum THEN
         SET count to itself plus current sum minus K map value
     ENDIF
-    SET current num key to (itself OR 0) plus 1
+    SET current sum key to (itself OR 0) plus 1
 ENDFOR
 RETURN count
 ```
