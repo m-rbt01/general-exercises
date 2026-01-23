@@ -767,6 +767,97 @@ function getMinBatchSize(dataSamples, maxBatches){
     return lowSize;
 }
 
+function getProductExceptSelfArray(nums){
+    //O(n) linear time and O(n) extra space (i.e. for prefix/suffix not result array)
+    /*
+    //result, prefix, and suffix products of same size as nums
+    const result = new Array(nums.length);
+    const prefix = new Array(nums.length);
+    const suffix = new Array(nums.length);
+    //begin the left side of prefix and right side of suffix with 1: neutral for first and last elements (i.e. first has no prefix side, last has no suffix side)
+    prefix[0] = 1;
+    suffix[suffix.length - 1] = 1;
+    //build prefix from left to right
+    for(let left = 1; left < nums.length; left++){
+        prefix[left] = prefix[left - 1] * nums[left - 1]; //set prefix to previous prefix product times previous num
+    }
+    //build suffix from right to left
+    for(let right = nums.length - 2; right >= 0; right--){
+        suffix[right] = suffix[right + 1] * nums[right + 1]; //set suffix to product of right side of current num
+    }
+    //set result to total product of left and right side of a given index
+    for(let i = 0; i < result.length; i++){
+        result[i] = prefix[i] * suffix[i];
+    }
+    return result;*/
+
+    //O(n) linear time and O(1) constant space: reuse result array for prefix and suffix
+    const result = new Array(nums.length);
+    result[0] = 1; //begin with neutral multiplier for prefix * suffix products
+    for(let left = 1; left < nums.length; left++){ //build prefix from left to right
+        result[left] = result[left - 1] * nums[left - 1]; //set prefix to previous prefix product times previous num
+    }
+    let runningSuffix = nums[nums.length - 1]; //begin with last element
+    for(let right = nums.length - 2; right >= 0; right--){ //build final result: prefix times running suffix product
+        result[right] *= runningSuffix;
+        runningSuffix *= nums[right]; //update running suffix
+    }
+    return result;
+}
+
+function getSubarrayMaxSum(nums){
+    let currentSum = nums[0]; //holds sub of a given subarray
+    let maxSum = nums[0]; //holds the maximum sum of a subarray
+    //iterate through nums starting at second element
+    for(let i = 1; i < nums.length; i++){
+        currentSum = Math.max(nums[i], currentSum + nums[i]); //extend subarray sum if greater than current num, otherwise start new subarray
+        maxSum = Math.max(maxSum, currentSum); //update max num so far when new maximum is found
+    }
+    return maxSum;
+}
+
+function getTotalVolume(elevations){
+    //Optimal solution O(n) linear time, but O(n) extra space
+    let totalVolumeTrapped = 0;
+    let maxSoFar = elevations[0]; //max left is initially the first element
+    const result = new Array(elevations.length); //holds prefix of max left, after tracking the suffix it will hold trapped volume at a given index
+    result[0] = maxSoFar; //first prefix is the first element
+    //build prefix from left to right
+    for(let left = 1; left < elevations.length; left++){
+        maxSoFar = Math.max(maxSoFar, elevations[left]); //track the maximum number on the left so far
+        result[left] = maxSoFar; //set prefix for current elevation: either max left or the current elevation itself 
+    }
+    //build suffix from right to left
+    maxSoFar = elevations[elevations.length - 1]; //reset max so far as the last element
+    for(let right = elevations.length - 1; right >= 0; right--){
+        maxSoFar = Math.max(maxSoFar, elevations[right]); //track the maximum number on the right so far
+        if(maxSoFar > elevations[right] && result[right] > elevations[right]){ //compute trapped water when prefix and suffix is greater than current elevation
+            result[right] = Math.min(result[right], maxSoFar) - elevations[right];
+            totalVolumeTrapped += result[right]; //increment total volume trapped by the amount of trapped water at current elevation
+        }
+        else result[right] = 0; //indicate that current elevation has no trapped water
+    }
+    return totalVolumeTrapped;
+    
+    /*Brute-force approach, O(n^2) time and O(1) constant space (i.e. no prefix/suffix array)
+    //outer loop: visit each element at least once
+    for(let i = 0; i < elevations.length; i++){
+        let maxLeft = 0;
+        let maxRight = 0;
+        //inner loop: visit all elements to the left
+        for(let left = 0; left < i; left++){
+            maxLeft = Math.max(maxLeft, elevations[left]);
+        }
+        //inner loop: visit all elements to the right
+        for(let right = i + 1; right < elevations.length; right++){
+            maxRight = Math.max(maxRight, elevations[right]);
+        }
+        if(maxLeft > elevations[i] && maxRight > elevations[i]){
+            totalVolumeTrapped += Math.min(maxLeft, maxRight) - elevations[i];
+        }
+    }*/
+}
+
 //-----------------CLASSES-----------------------
 class TreeNode{
     constructor(value = 0, left = null, right = null){
